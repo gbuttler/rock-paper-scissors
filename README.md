@@ -23,3 +23,6 @@ Paper       Scissors    Scissors beats paper, you lose!
 Scissors    Rock        Rock beats scissors, you lose!
 Scissors    Paper       Scissors beats paper, you win!
 Scissors    Scissors    You both played the same, its a draw!
+
+
+initial round completed and working

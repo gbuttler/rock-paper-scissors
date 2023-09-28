@@ -26,3 +26,18 @@ Scissors    Scissors    You both played the same, its a draw!
 
 
 initial round completed and working
+
+WALKTHROUGH PART 2
+Create new function called game()
+game() plays 5 rounds, and records and displays the winner at the end of each one.
+the winner of each round is added up and the player with the most wins is victorious.
+console.log() shows the final winner.
+
+function gameround
+playerSelection and computerSelection
+determine winner and add 1 to roundCounter
+
+Game mechanics using an if statement:
+function called playGame
+if gameround is less than 5 then play game
+else end game and return winning result

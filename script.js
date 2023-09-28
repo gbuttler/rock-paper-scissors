@@ -1,10 +1,10 @@
 function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random()*3)+1
+    let randomNumber = Math. floor(Math. random()*3)+1
     return randomNumber
 };
 
 
-// console.log(getComputerChoice());
+// console. log(getComputerChoice());
 
 
 function finalComputerChoice() {
@@ -25,64 +25,140 @@ function finalComputerChoice() {
 
 var playerSelection = prompt('Please choose Rock, Paper or Scissors:', '');
 
-    // console.log('You have chosen ' + playerSelection)
+    // console. log('You have chosen ' + playerSelection)
 
 function finalPlayerSelection() {
     let initialTurn = playerSelection
-    let finalPlayerSelection = initialTurn.charAt(0).toUpperCase() + initialTurn.slice(1);
+    let finalPlayerSelection = initialTurn. charAt(0). toUpperCase() + initialTurn. slice(1);
     return finalPlayerSelection;
 }
 
-console.log('You have chosen ' + finalPlayerSelection());
-console.log('The computer has chosen ' + finalComputerChoice())
+// console. log('You have chosen ' + finalPlayerSelection());
+// console. log('The computer has chosen ' + finalComputerChoice())
 
+let playerScore = 0
+let computerScore = 0
+let roundNumber = 0
 
-function gameOutcome(finalPlayerSelection, finalComputerChoice) {
-    if (finalPlayerSelection === 'Rock' && finalComputerChoice === 'Rock') {
-        return 'You both played the same, its a draw!';
+let playerFinalTurn = finalPlayerSelection();
+let computerFinalTurn = finalComputerChoice();
+
+console.log(playerFinalTurn)
+console.log(computerFinalTurn)
+
+function gameOutcome(playerFinalTurn, computerFinalTurn) {
+    if (playerFinalTurn === 'Rock' && computerFinalTurn === 'Rock') {
+        roundNumber++
+        return 'You played ' +playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'You both played the same, its a draw!';
     }
-    else if (finalPlayerSelection === 'Rock' && finalComputerChoice === 'Paper') {
-        return 'Paper beats rock, you lose!';
+    else if (playerFinalTurn === 'Rock' && computerFinalTurn === 'Paper') {
+        roundNumber++
+        computerScore++
+        return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Paper beats rock, you lose!';
     }
-    else if (finalPlayerSelection === 'Rock' && finalComputerChoice === 'Scissors') {
-        return 'Rock beats scissors, you win!';
+    else if (playerFinalTurn === 'Rock' && computerFinalTurn === 'Scissors') {
+        roundNumber++
+        playerScore++
+        return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Rock beats scissors, you win!';
     }
-    else if (finalPlayerSelection === 'Paper' && finalComputerChoice === 'Rock') {
-        return 'Paper beats rock, you win!';
+    else if (playerFinalTurn === 'Paper' && computerFinalTurn === 'Rock') {
+        roundNumber++
+        playerScore++
+        return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Paper beats rock, you win!';
     }
-    else if (finalPlayerSelection === 'Paper' && finalComputerChoice === 'Paper') {
-        return 'You both played the same, its a draw!';
+    else if (playerFinalTurn === 'Paper' && computerFinalTurn === 'Paper') {
+        roundNumber++
+        return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'You both played the same, its a draw!';
     }
-    else if (finalPlayerSelection === 'Paper' && finalComputerChoice === 'Scissors') {
-        return 'Scissors beats paper, you lose!';
+    else if (playerFinalTurn === 'Paper' && computerFinalTurn === 'Scissors') {
+        roundNumber++
+        computerScore++
+        return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Scissors beats paper, you lose!';
     }
-    else if (finalPlayerSelection === 'Scissors' && finalComputerChoice === 'Rock') {
-        return 'Rock beats scissors, you lose!';
+    else if (playerFinalTurn === 'Scissors' && computerFinalTurn === 'Rock') {
+        roundNumber++
+        computerScore++
+        return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Rock beats scissors, you lose!';
     }
-    else if (finalPlayerSelection === 'Scissors' && finalComputerChoice === 'Paper') {
-        return ' Scissors beats paper, you win!';
+    else if (playerFinalTurn === 'Scissors' && computerFinalTurn === 'Paper') {
+        roundNumber++
+        playerScore++
+        return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Scissors beats paper, you win!';
     }
-    else if (finalPlayerSelection === 'Scissors' && finalComputerChoice === 'Scissors') {
-        return 'You both played the same, its a draw!';
+    else if (playerFinalTurn === 'Scissors' && computerFinalTurn === 'Scissors') {
+        roundNumber++
+        return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'You both played the same, its a draw!';
     }
     else {
-        return 'Invalid result. Try again.';
+        return 'Invalid result.  Try again. ';
     }
 };
 
-// return gameOutcome(finalPlayerSelection, finalComputerChoice);
+
+function results() {
+    return `${gameOutcome(playerFinalTurn, computerFinalTurn)} \n Your score is ${playerScore}. \n The computer score is ${computerScore}. \n This is round ${roundNumber}.`;  
+}
+
+console.log(results());
+
+// const game()
+
+// function game(finalPlayerSelection,finalComputerChoice) {
+//     while (roundNumber < 6) {
+//         return gameOutcome(finalComputerChoice(),finalPlayerSelection());
+//     }
+// }
 
 
+// console. log(game(finalPlayerSelection, finalComputerChoice));
 
-console.log(gameOutcome(finalComputerChoice(),finalPlayerSelection()));
+// function winner (computerScore, playerScore) {
+//     if (computerScore > playerScore) {
+//         return 'Computer wins!';
+//     }
+//     else if (playerScore > computerScore) {
+//         return 'You win!';
+//     }
+//     else {
+//         return 'Invalid game'
+//     }
+// }
 
-// User        Computer    Prints
-// Rock        Rock        You both played the same, its a draw!
-// Rock        Paper       Paper beats rock, you lose!
-// Rock        Scissors    Rock beats scissors, you win!
-// Paper       Rock        Paper beats rock, you win!
-// Paper       Paper       You both played the same, its a draw!
-// Paper       Scissors    Scissors beats paper, you lose!
-// Scissors    Rock        Rock beats scissors, you lose!
-// Scissors    Paper       Scissors beats paper, you win!
-// Scissors    Scissors    You both played the same, its a draw!
+// console. log(winner(computerScore, playerScore))
+
+
+// function gameRound() {
+//     return gameOutcome();
+//     roundNumber++
+// }
+
+// console. log(gameRound());
+
+
+// function game() {
+//     let roundOne = gameOutcome(finalComputerChoice(),finalPlayerSelection())
+//     console. log('Your score is ' + playerScore)
+//     console. log('The computer score is ' + computerScore)
+//     let roundTwo = gameOutcome(finalComputerChoice(),finalPlayerSelection())
+//     console. log('Your score is ' + playerScore)
+//     console. log('The computer score is ' + computerScore)
+// }
+
+// console. log(game())
+
+// function winner() {
+//     if (computerScore === playerScore) {
+//         return 'Tie!';
+//     }
+//     else if (computerScore > playerScore) {
+//         return 'Computer wins!';
+//     }
+//     else if (computerScore > playerScore) {
+//         return 'You win!';
+//     }
+//     else {
+//         return 'Invalid game. ';
+//     }
+// }
+
+// console. log(winner())

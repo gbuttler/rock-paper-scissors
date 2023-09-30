@@ -42,9 +42,9 @@ const play = () => {
     // console. log('You have chosen ' + finalPlayerSelection());
     // console. log('The computer has chosen ' + finalComputerChoice())
 
-    let playerScore = 0
-    let computerScore = 0
-    let roundNumber = 0
+    // let playerScore = 0
+    // let computerScore = 0
+    // let roundNumber = 0
 
     let playerFinalTurn = finalPlayerSelection();
     let computerFinalTurn = finalComputerChoice();
@@ -54,45 +54,45 @@ const play = () => {
 
     function gameOutcome(playerFinalTurn, computerFinalTurn) {
         if (playerFinalTurn === 'Rock' && computerFinalTurn === 'Rock') {
-            roundNumber++
+            // roundNumber++
             return 'You played ' +playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'You both played the same, its a draw!';
         }
         else if (playerFinalTurn === 'Rock' && computerFinalTurn === 'Paper') {
-            roundNumber++
+            // roundNumber++
             computerScore++
             return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Paper beats rock, you lose!';
         }
         else if (playerFinalTurn === 'Rock' && computerFinalTurn === 'Scissors') {
-            roundNumber++
+            // roundNumber++
             playerScore++
             return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Rock beats scissors, you win!';
         }
         else if (playerFinalTurn === 'Paper' && computerFinalTurn === 'Rock') {
-            roundNumber++
+            // roundNumber++
             playerScore++
             return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Paper beats rock, you win!';
         }
         else if (playerFinalTurn === 'Paper' && computerFinalTurn === 'Paper') {
-            roundNumber++
+            // roundNumber++
             return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'You both played the same, its a draw!';
         }
         else if (playerFinalTurn === 'Paper' && computerFinalTurn === 'Scissors') {
-            roundNumber++
+            // roundNumber++
             computerScore++
             return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Scissors beats paper, you lose!';
         }
         else if (playerFinalTurn === 'Scissors' && computerFinalTurn === 'Rock') {
-            roundNumber++
+            // roundNumber++
             computerScore++
             return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Rock beats scissors, you lose!';
         }
         else if (playerFinalTurn === 'Scissors' && computerFinalTurn === 'Paper') {
-            roundNumber++
+            // roundNumber++
             playerScore++
             return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'Scissors beats paper, you win!';
         }
         else if (playerFinalTurn === 'Scissors' && computerFinalTurn === 'Scissors') {
-            roundNumber++
+            // roundNumber++
             return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'You both played the same, its a draw!';
         }
         else {
@@ -110,19 +110,41 @@ const play = () => {
 
 }
 
-
+let finalComputerScore = 0
+let finalPlayerScore = 0
 
 function game() {
-    while (roundNumber <= 5) {
+    while (roundNumber < 5) {
         play()
         roundNumber++
         console.log('This is round ' + roundNumber);
-    }
+        // console.log(playerScore)
+        // console.log(computerScore)
+        // if (computerScore === 1) {
+        //     finalComputerScore++
+        // }
+        // else if (playerScore === 1) {
+        //     finalPlayerScore++
+        // }
+        // else {
+        //     console.log('No change in score')
+        // }
+        // console.log('The player score is ' + finalPlayerScore + '\n' + 'The computer score is ' + finalComputerScore)
 
+    }
+    if (computerScore > playerScore ) {
+        console.log('Computer wins!')
+    }
+    else if (playerScore > computerScore) {
+        console.log('You win!')
+    }
+    else {
+        console.log('It is a draw!')
+    }
 
 }
 
-console.log(game());
+// console.log(game() + 'Game over!');
 
 // function game(finalPlayerSelection,finalComputerChoice) {
 //     while (roundNumber < 6) {

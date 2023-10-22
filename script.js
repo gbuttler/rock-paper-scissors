@@ -2,7 +2,7 @@ let playerScore = 0
 let computerScore = 0
 let roundNumber = 0
 
-const play = () => {
+const play = (playerFinalTurn) => {
 
     function getComputerChoice() {
         let randomNumber = Math. floor(Math. random()*3)+1
@@ -29,23 +29,39 @@ const play = () => {
     };
 
 
-    var playerSelection = prompt('Please choose Rock, Paper or Scissors:', '');
+    // var playerSelection = prompt('Please choose Rock, Paper or Scissors:', '');
     
 
         // console. log('You have chosen ' + playerSelection)
 
-    function finalPlayerSelection() {
-        let initialTurn = playerSelection
-        let finalPlayerSelection = initialTurn. charAt(0). toUpperCase() + initialTurn. slice(1);
-        return finalPlayerSelection;
-        // const rockbutton = document.querySelector('#rockbtn');
-        // console.log(rockbutton)
-        // rockbutton.addEventListener ('click', () => {
-        // let finalPlayerSelection = rockbutton
-        // return finalPlayerSelection;
-        // console.log(finalPlayerSelection); 
-        // });
-    }
+    // function finalPlayerSelection() {
+    //     // let initialTurn = playerSelection
+    //     // let finalPlayerSelection = initialTurn. charAt(0). toUpperCase() + initialTurn. slice(1);
+    //     // return finalPlayerSelection;
+    //     const rockbutton = document.querySelector('#rockbtn');
+    //     const paperbutton = document.querySelector('#paperbtn');
+    //     const scissorsbutton = document.querySelector('#scissorsbtn');
+    //     // console.log(rockbutton)
+    //     if  rockbutton.addEventListener ('click', () => {
+    //         let finalPlayerSelection = Rock
+    //         return finalPlayerSelection;
+    //     })
+        
+    //     if else paperbutton.addEventListener ('click', () => {
+    //         let finalPlayerSelection = Paper
+    //         return finalPlayerSelection;
+    //     })
+    //     if else rockbutton.addEventListener ('click', () => {
+    //         let finalPlayerSelection = Scissors
+    //         return finalPlayerSelection;
+    //     })
+    //     else {
+    //         return 'Invalid response!';
+    //     }
+        
+    //     console.log(finalPlayerSelection); 
+    //     });
+    // }
 
 
 
@@ -56,7 +72,7 @@ const play = () => {
     // let computerScore = 0
     // let roundNumber = 0
 
-    let playerFinalTurn = finalPlayerSelection();
+    // let playerFinalTurn = finalPlayerSelection();
     let computerFinalTurn = finalComputerChoice();
 
     // console.log(playerFinalTurn)
@@ -112,7 +128,10 @@ const play = () => {
 
 
     function results() {
-        return `${gameOutcome(playerFinalTurn, computerFinalTurn)} \n Your score is ${playerScore}. \n The computer score is ${computerScore}.`;  
+        const roundResults = document.querySelector('#results');
+        roundResults.textContent = `${gameOutcome(playerFinalTurn, computerFinalTurn)} \n Your score is ${playerScore}. \n The computer score is ${computerScore}.`;
+        return `${gameOutcome(playerFinalTurn, computerFinalTurn)} \n Your score is ${playerScore}. \n The computer score is ${computerScore}.`; 
+         
     }
 
     console.log(results());
@@ -123,27 +142,41 @@ const play = () => {
 let finalComputerScore = 0
 let finalPlayerScore = 0
 
-function game() {
-    while (roundNumber < 5) {
-        play()
-        roundNumber++
-        console.log('This is round ' + roundNumber);
-    }
-    if (computerScore > playerScore ) {
-        console.log('Computer wins!')
-    }
-    else if (playerScore > computerScore) {
-        console.log('You win!')
-    }
-    else {
-        console.log('It is a draw!')
-    }
+// function game() {
+//     while (roundNumber < 5) {
+//         play()
+//         roundNumber++
+//         console.log('This is round ' + roundNumber);
+//     }
+//     if (computerScore > playerScore ) {
+//         console.log('Computer wins!')
+//     }
+//     else if (playerScore > computerScore) {
+//         console.log('You win!')
+//     }
+//     else {
+//         console.log('It is a draw!')
+//     }
 
-}
+// }
 
-// const rockbutton = document.querySelector('#rockbtn');
-// console.log(rockbutton)
-// rockbutton.addEventListener ('click', () => {
-//     alert('hello')
-//     console.log('rock button');
-// });
+// game();
+
+const rockbutton = document.querySelector('#rockbtn');
+console.log(rockbutton)
+rockbutton.addEventListener ('click', () => {
+    play('Rock')
+});
+
+const paperbutton = document.querySelector('#paperbtn');
+console.log(paperbutton)
+paperbutton.addEventListener ('click', () => {
+    play('Paper')
+});
+
+
+const scissorsbutton = document.querySelector('#scissorsbtn');
+console.log(scissorsbutton)
+scissorsbutton.addEventListener ('click', () => {
+    play('Scissors')
+});

@@ -30,6 +30,7 @@ const play = () => {
 
 
     var playerSelection = prompt('Please choose Rock, Paper or Scissors:', '');
+    
 
         // console. log('You have chosen ' + playerSelection)
 
@@ -37,7 +38,16 @@ const play = () => {
         let initialTurn = playerSelection
         let finalPlayerSelection = initialTurn. charAt(0). toUpperCase() + initialTurn. slice(1);
         return finalPlayerSelection;
+        // const rockbutton = document.querySelector('#rockbtn');
+        // console.log(rockbutton)
+        // rockbutton.addEventListener ('click', () => {
+        // let finalPlayerSelection = rockbutton
+        // return finalPlayerSelection;
+        // console.log(finalPlayerSelection); 
+        // });
     }
+
+
 
     // console. log('You have chosen ' + finalPlayerSelection());
     // console. log('The computer has chosen ' + finalComputerChoice())
@@ -118,19 +128,6 @@ function game() {
         play()
         roundNumber++
         console.log('This is round ' + roundNumber);
-        // console.log(playerScore)
-        // console.log(computerScore)
-        // if (computerScore === 1) {
-        //     finalComputerScore++
-        // }
-        // else if (playerScore === 1) {
-        //     finalPlayerScore++
-        // }
-        // else {
-        //     console.log('No change in score')
-        // }
-        // console.log('The player score is ' + finalPlayerScore + '\n' + 'The computer score is ' + finalComputerScore)
-
     }
     if (computerScore > playerScore ) {
         console.log('Computer wins!')
@@ -144,64 +141,9 @@ function game() {
 
 }
 
-// console.log(game() + 'Game over!');
-
-// function game(finalPlayerSelection,finalComputerChoice) {
-//     while (roundNumber < 6) {
-//         return gameOutcome(finalComputerChoice(),finalPlayerSelection());
-//     }
-// }
-
-
-// console. log(game(finalPlayerSelection, finalComputerChoice));
-
-// function winner (computerScore, playerScore) {
-//     if (computerScore > playerScore) {
-//         return 'Computer wins!';
-//     }
-//     else if (playerScore > computerScore) {
-//         return 'You win!';
-//     }
-//     else {
-//         return 'Invalid game'
-//     }
-// }
-
-// console. log(winner(computerScore, playerScore))
-
-
-// function gameRound() {
-//     return gameOutcome();
-//     roundNumber++
-// }
-
-// console. log(gameRound());
-
-
-// function game() {
-//     let roundOne = gameOutcome(finalComputerChoice(),finalPlayerSelection())
-//     console. log('Your score is ' + playerScore)
-//     console. log('The computer score is ' + computerScore)
-//     let roundTwo = gameOutcome(finalComputerChoice(),finalPlayerSelection())
-//     console. log('Your score is ' + playerScore)
-//     console. log('The computer score is ' + computerScore)
-// }
-
-// console. log(game())
-
-// function winner() {
-//     if (computerScore === playerScore) {
-//         return 'Tie!';
-//     }
-//     else if (computerScore > playerScore) {
-//         return 'Computer wins!';
-//     }
-//     else if (computerScore > playerScore) {
-//         return 'You win!';
-//     }
-//     else {
-//         return 'Invalid game. ';
-//     }
-// }
-
-// console. log(winner())
+// const rockbutton = document.querySelector('#rockbtn');
+// console.log(rockbutton)
+// rockbutton.addEventListener ('click', () => {
+//     alert('hello')
+//     console.log('rock button');
+// });

@@ -144,6 +144,8 @@ function game() {
 
 }
 
+game()
+
 // console.log(game() + 'Game over!');
 
 // function game(finalPlayerSelection,finalComputerChoice) {

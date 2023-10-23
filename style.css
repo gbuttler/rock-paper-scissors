@@ -1,0 +1,57 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+
+}
+
+#buttonContainer {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
+    border: 3px;
+    background-color: lightgray;
+}
+
+div {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#rockbtn {
+
+}
+
+#paperbtn {
+
+}
+
+#scissorsbtn {
+
+}
+
+#results {
+    padding: 10px;    
+}
+
+#finalScore {
+    padding: 10px;  
+}
+
+#winner {
+    padding: 10px;  
+}
+

@@ -41,3 +41,7 @@ Game mechanics using an if statement:
 function called playGame
 if gameround is less than 5 then play game
 else end game and return winning result
+
+
+USER INTERFACE
+I now want to add in a user interface so I don't have to play in the console.

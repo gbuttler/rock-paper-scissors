@@ -81,7 +81,7 @@ const play = (playerFinalTurn) => {
     function gameOutcome(playerFinalTurn, computerFinalTurn) {
         if (playerFinalTurn === 'Rock' && computerFinalTurn === 'Rock') {
             // roundNumber++
-            return 'You played ' +playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'You both played the same, its a draw!';
+            return 'You played ' + playerFinalTurn + ' and the computer played ' + computerFinalTurn + '. ' + 'You both played the same, its a draw!';
         }
         else if (playerFinalTurn === 'Rock' && computerFinalTurn === 'Paper') {
             // roundNumber++
@@ -128,23 +128,67 @@ const play = (playerFinalTurn) => {
 
 
     function results() {
-        const roundResults = document.querySelector('#results');
-        roundResults.textContent = `${gameOutcome(playerFinalTurn, computerFinalTurn)} \n Your score is ${playerScore}. \n The computer score is ${computerScore}.`;
-        return `${gameOutcome(playerFinalTurn, computerFinalTurn)} \n Your score is ${playerScore}. \n The computer score is ${computerScore}.`; 
-         
+        if (playerScore < 5 && computerScore < 5) {
+            const roundResults = document.querySelector('#results');
+            roundResults.textContent = `${gameOutcome(playerFinalTurn, computerFinalTurn)} \n Your score is ${playerScore}. \n The computer score is ${computerScore}.`;
+            const finalScore = document.querySelector('#finalScore');
+            finalScore.textContent = 'Player = ' + playerScore + '     Computer = ' + computerScore
+            // return `${gameOutcome(playerFinalTurn, computerFinalTurn)} \n Your score is ${playerScore}. \n The computer score is ${computerScore}.`; 
+        }
+        else if (playerScore = 5 && computerScore < 5) {
+            const winner = document.querySelector('#winner')
+            winner.textContent = 'You win! Hooray!'
+        }
+        else if (computerScore = 5 && playerScore < 5) {
+            const winner = document.querySelector('#winner')
+            winner.textContent = 'Computer wins! Better luck next time...'
+        }
+        else {
+            const winner = document.querySelector('#winner')
+            winner.textContent = 'A draw!!!'
+        }
+    
     }
 
     console.log(results());
 
+    function winner() {
+        if (playerScore < 5 && computerScore < 5) {
+            const winner = document.querySelector('#winner')
+            winner.textContent = 'Keep going, you have got this!'
+        }
+        else if (playerScore = 5 && computerScore < 5) {
+            const winner = document.querySelector('#winner')
+            winner.textContent = 'You win!!! Hooray!'
+        }
+        else if (computerScore = 5 && playerScore < 5) {
+            const winner = document.querySelector('#winner')
+            winner.textContent = 'Computer wins! Better luck next time...'
+        }
+        else {
+            const winner = document.querySelector('#winner')
+            winner.textContent = 'GAME OVER'
+        }
+    }
 
-}
+    console.log(winner());
+} 
+   
+
+    
+
+
 
 let finalComputerScore = 0
 let finalPlayerScore = 0
 
+function game() {
+
+}
+
 // function game() {
 //     while (roundNumber < 5) {
-//         play()
+//         play())
 //         roundNumber++
 //         console.log('This is round ' + roundNumber);
 //     }
